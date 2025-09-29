@@ -85,7 +85,7 @@
   },
   "custom/power": {
     "format": "",
-    "on-click": "XDG_DATA_DIRS="$HOME/hypr/desktop-files" rofi -show drun",
+    "on-click": "'XDG_DATA_DIRS'='$HOME/hypr/desktop-files' rofi -show drun",
     "tooltip": "Power Menu"
   },
   "custom/notification": {
