@@ -6,7 +6,7 @@
 
 window .modules-center {
   border-radius: 0 0 15px 15px;
-  background: linear-gradient(to bottom right, rgba(20, 20, 20, 0.6) 20%, rgba(20, 20, 20, 0.8) 100%);
+  background: linear-gradient(to bottom right, rgba(20, 20, 20, 0.75) 20%, rgba(20, 20, 20, 0.92) 100%);
 }
 
 window#waybar {
