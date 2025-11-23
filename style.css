@@ -23,7 +23,7 @@ window#waybar {
   transition: all 0.4s ease-in-out;
 }
 
-#workspaces button.active {
+#workspaces button.focused {
   padding: 0 15px;
   transition: all 0.4s ease-in-out;
   color: #00C8C8;
@@ -32,6 +32,7 @@ window#waybar {
 
 #workspaces button.empty {
   color: #bfbfbf;
+  transition: none;
 }
 
 #workspaces button:hover {
@@ -70,6 +71,7 @@ window#waybar {
 #wireplumber {
   color: #B3E5FC;
   margin-right: 20px;
+  margin-top: 4.5px;
 }
 
 #clock {
