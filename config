@@ -2,10 +2,10 @@
   "layer": "top",
   "modules-left": [
     "tray",
-    "sway/window"
+    "hyprland/window"
   ],
   "modules-center": [
-    "sway/workspaces",
+    "hyprland/workspaces",
     "temperature"
   ],
   "modules-right": [
@@ -19,19 +19,43 @@
     "format": "{title}",
     "max-length": 50
   },
-  "sway/workspaces": {
+  "hyprland/workspaces": {
     "format": "{icon}{windows}",
     "format-icons": {
-      "default": "●"
+      //"default": "● ",
+      "empty": "●"
     },
-    "on-scroll-down": "swaymsg workspace r-1",
-    "on-scroll-up": "swaymsg workspace r+1",
+    "window-rewrite-default": "",
+    "window-rewrite": {
+      "title<.*youtube.*>": " ",
+      "class<chrome|chromium>": " ",
+      "class<opera|opera-mini|opera-developer>": " ",
+      "class<(firefox|firefox-developer-edition|firefox-beta|floorp|librewolf)>": " ",
+      "class<brave>": " ",
+      "class<discord|vesktop|webcord>": " ",
+      "class<steam>": " ",
+      "class<spotify>": " ",
+      "class<supertux.*>": " ",
+      "class<minecraft.*|prismlauncher|atlauncher>": " 󰍳",
+      "title<minecraft.*>": " 󰍳",
+      "title<.*github.*>": " ",
+      "kitty": " ",
+      "title<nvim.*>": " ",
+      "title<vi.*>": " ",
+      "title<.*emacs.*": " ",
+      "code": " 󰨞",
+      "Hyprland Polkit Agent*": " 󰀇"
+    },
+    "on-scroll-down": "hyprctl dispatch workspace r-1",
+    "on-scroll-up": "hyprctl dispatch workspace r+1",
     "persistent-workspaces": {
-      "1": [],
-      "2": [],
-      "3": [],
-      "4": [],
-      "5": []
+      "*": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
     }
   },
   "temperature": {
@@ -52,12 +76,9 @@
     ]
   },
   "wireplumber": {
-    "format": "{volume}% {icon}",
+    "format": "{volume}%",
     "on-click": "wpctl set-mute @DEFAULT_SINK@ toggle",
-    "on-click-right": "pavucontrol",
-    "format-muted": "🔇",
-    "format-icons": [ "🔈", "🔉", "🔊" ]
-    }
+    "on-click-right": "pavucontrol"
   },
   "clock": {
     "format-alt": "{:%a, %d. %b  %H:%M}"
